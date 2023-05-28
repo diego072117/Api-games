@@ -1,0 +1,27 @@
+.container-nav{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.nav{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    max-width: 20em;
+    width: 100%;
+    border-radius: 40px;
+    //box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.icon{
+    font-size: 30px;
+    margin: 1em 0;
+    color: #989A9D;
+}
+
+.icon:hover{
+    color: #FD814A;
+}

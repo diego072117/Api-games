@@ -1,27 +1,24 @@
-import { useEffect, useState } from "react";
-import { Api } from "../../data/Api";
+// import { useEffect, useState } from "react";
+// import { Api } from "../../data/Api";
+import { Nav } from "../../components/Nav/Nav";
 
 export const Home = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchDataFromAPI = async () => {
-      const responseData = await Api();
-      setData(responseData);
-    };
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   const dataFromAPI = async () => {
+  //     const responseData = await Api();
+  //     setData(responseData);
+  //   };
 
-    fetchDataFromAPI();
-  }, []);
-
-  // async function fetchData() {
-  //   const data = await Api()
-  //   console.log('datos', data);
-  // }
-  
-  // fetchData()
+  //   dataFromAPI();
+  // }, []);
 
   return (
     <>
-      <h1>hola</h1>
+      {/* {data.map((game) =>(
+        <p key={game.id}>{game.title}</p>
+      ))} */}
+      <Nav />
     </>
   );
 };
