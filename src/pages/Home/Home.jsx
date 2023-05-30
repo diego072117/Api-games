@@ -9,12 +9,11 @@ export const Home = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrenPage] = useState(0);
   const itemsPerPage = 30;
-
-  const pageCount = Math.ceil(data.length / itemsPerPage);
-  console.log("total de items", pageCount);
+  const totalPage = Math.ceil(data.length / itemsPerPage);
 
   const handlePageChange = ({ selected }) => {
     setCurrenPage(selected);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
@@ -32,7 +31,7 @@ export const Home = () => {
       <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
-        pageCount={pageCount}
+        pageCount={totalPage}
         marginPagesDisplayed={0}
         pageRangeDisplayed={0}
         onPageChange={handlePageChange}

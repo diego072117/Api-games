@@ -12,7 +12,6 @@ export const Api = async () => {
         },
       }
     );
-    console.log("datosApi:", data);
     return data 
   } catch (error) {
     console.log(error);
