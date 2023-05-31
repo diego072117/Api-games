@@ -10,8 +10,8 @@ export const Card = ({ data }) => {
             <img src={game.thumbnail} className="img-card" alt="Imagen" />
             <div className="content-container">
               <div className="title-game">{game.title}</div>
-              <div className="card-icon">
-                <Link to={`/gameDetails/${game.id}`}>
+              <div>
+                <Link className="card-icon" to={`/gameDetails/${game.id}`}>
                   <i className="fa-solid fa-square-plus"></i>
                 </Link>
               </div>
