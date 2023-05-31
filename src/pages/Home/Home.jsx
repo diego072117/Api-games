@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import { Api } from "../../data/Api";
+import { getAllGames } from "../../data/Api";
 import { Card } from "../../components/GameCard/Card";
 import { Nav } from "../../components/Nav/Nav";
 import './HomeStyle.scss'
@@ -18,7 +18,7 @@ export const Home = () => {
 
   useEffect(() => {
     const dataFromAPI = async () => {
-      const responseData = await Api();
+      const responseData = await getAllGames();
       setData(responseData);
     };
 

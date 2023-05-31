@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CardStyle.scss";
 
 export const Card = ({ data }) => {
@@ -8,11 +9,11 @@ export const Card = ({ data }) => {
           <div className="card" key={game.id}>
             <img src={game.thumbnail} className="img-card" alt="Imagen" />
             <div className="content-container">
-              <div className="title-game">
-                {game.title}
-              </div>
-              <div className="card-icon">
-                <i className="fa-solid fa-square-plus"></i>
+              <div className="title-game">{game.title}</div>
+              <div>
+                <Link className="card-icon" to={`/gameDetails/${game.id}`}>
+                  <i className="fa-solid fa-square-plus"></i>
+                </Link>
               </div>
             </div>
           </div>
