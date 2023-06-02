@@ -1,0 +1,42 @@
+.container-details {
+  display: flex;
+  justify-content: center;
+}
+
+.content-details {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  max-width: 20em;
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+  transition: height 0.5s ease;
+}
+
+.open {
+  height: 36em;
+}
+
+.close {
+  height: 5em;
+}
+
+.button {
+  background-color: #fd814a;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  height: 1.2em;
+  width: 7em;
+  cursor: pointer;
+  margin: -18px;
+  background-image: linear-gradient(to right, #fc5c4c, #fd814a);
+}
+
+.icon:hover {
+  color: #fd814a;
+}
