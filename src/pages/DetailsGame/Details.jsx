@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getGameById } from "../../data/Api";
 import { DetailsGame } from "../../components/DetailsGame/DetailsGame";
 import "./DetailsStyle.scss";
-import { SyncLoader } from "react-spinners";
+import { PacmanLoader } from "react-spinners";
 
 export const Details = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ export const Details = () => {
   if (!gameDetails) {
     return (
       <div className="loader-container">
-        <SyncLoader color="#fc5c4c" />
+        <PacmanLoader color="#fd814a" />
       </div>
     );
   }
