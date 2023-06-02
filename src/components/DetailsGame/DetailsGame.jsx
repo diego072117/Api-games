@@ -22,7 +22,10 @@ export const DetailsGame = ({ detailsData }) => {
 
   return (
     <>
-      <div className="container-details">
+      <div
+        className="container-details"
+        style={{backgroundImage: `url(${detailsData.screenshots[0].image})`,}}
+      >
         <nav className={contentClassName}>
           <div className="button" onClick={handleClick}>
             Overview
