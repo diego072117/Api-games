@@ -1,41 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-  background: #fff;
-  width: 17.5em;
-  height: 13em;
-  border-radius: 13px;
-  margin: 20px;
-}
-
-.img-card {
-  width: 100%;
-  height: 76%;
-  object-fit: cover;
-  border-radius: 13px 13px 0px 0px;
-}
-
-.content-container{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 10px;
-}
+  flex-wrap: wrap;
+  justify-content: center;
 
-.title-game{
-  font-weight: bold;
-  font-size: 1em;
-  font-family: 'TT Norms';
-}
+  & .card {
+    background: #fff;
+    width: 17.5em;
+    height: 13em;
+    border-radius: 13px;
+    margin: 20px;
 
-.card-icon{
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #C4C4C4;
+    & .img-card {
+      width: 100%;
+      height: 76%;
+      object-fit: cover;
+      border-radius: 13px 13px 0px 0px;
+    }
+
+    & .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 10px;
+
+      & .title-game {
+        font-weight: bold;
+        font-size: 1em;
+        font-family: "TT Norms";
+      }
+
+      & .card-icon {
+        cursor: pointer;
+        font-size: 1.2em;
+        color: #c4c4c4;
+      }
+    }
+  }
 }
