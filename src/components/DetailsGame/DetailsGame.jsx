@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./DetailsGame.scss";
 
@@ -20,11 +20,31 @@ export const DetailsGame = ({ detailsData }) => {
     setOpenDetails(!openDetails);
   };
 
+  const rotateBackgroundImage = (screenshots) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImageIndex(
+          (prevIndex) => (prevIndex + 1) % screenshots.length
+        );
+      }, 10000);
+
+      return () => clearInterval(interval);
+    }, [screenshots.length]);
+
+    return {
+      backgroundImage: `url(${screenshots[currentImageIndex].image})`,
+    };
+  };
+
+  const backgroundStyle = rotateBackgroundImage(detailsData.screenshots);
+
   return (
     <>
       <div
         className="container-details"
-        style={{backgroundImage: `url(${detailsData.screenshots[0].image})`,}}
+        style={backgroundStyle}
       >
         <nav className={contentClassName}>
           <div className="button" onClick={handleClick}>
