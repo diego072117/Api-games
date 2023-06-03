@@ -6,7 +6,6 @@ const MAX_CHARACTERS_TITLE = 11;
 
 export const DetailsGame = ({ detailsData }) => {
   const [openDetails, setOpenDetails] = useState(false);
-
   const contentClassName = openDetails
     ? "content-details open"
     : "content-details";
@@ -15,10 +14,6 @@ export const DetailsGame = ({ detailsData }) => {
     detailsData.title.length > MAX_CHARACTERS_TITLE
       ? detailsData.title.slice(0, MAX_CHARACTERS_TITLE) + "..."
       : detailsData.title;
-
-  const handleClick = () => {
-    setOpenDetails(!openDetails);
-  };
 
   const rotateBackgroundImage = (screenshots) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -38,23 +33,26 @@ export const DetailsGame = ({ detailsData }) => {
     };
   };
 
-  const backgroundStyle = rotateBackgroundImage(detailsData.screenshots);
+  const handleClick = () => {
+    setOpenDetails(!openDetails);
+  };
 
-  console.log(detailsData);
+  const backgroundStyle = rotateBackgroundImage(detailsData.screenshots);
+  const requeriments = detailsData.minimum_system_requirements;
 
   return (
     <>
       <div className="container-details" style={backgroundStyle}>
         <div className="container-exit">
           <NavLink to="/" className="icon-exit">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i className="fa-solid fa-chevron-left"></i>
           </NavLink>
           <NavLink
             to={detailsData.game_url}
             className="icon-download"
             target="_blank"
           >
-            <i class="fa-solid fa-download"></i>
+            <i className="fa-solid fa-download"></i>
           </NavLink>
         </div>
 
@@ -87,27 +85,28 @@ export const DetailsGame = ({ detailsData }) => {
               </p>
             </div>
             <div className="requirements">
-              <p>
-                <i class="fa-solid fa-screwdriver-wrench"></i> requirements
+              <p className="title-game">
+                <i className="fa-solid fa-screwdriver-wrench"></i> requirements
               </p>
+
               <div className="content-requirements">
                 <p>
                   <span className="title-details">Memory:</span>{" "}
-                  {detailsData.minimum_system_requirements.memory}
+                  {requeriments ? requeriments.memory : "N/A"}
                 </p>
                 <p>
                   <span className="title-details">Os:</span>{" "}
-                  {detailsData.minimum_system_requirements.os}
+                  {requeriments ? requeriments.os : "N/A"}
                 </p>
                 <p>
                   <span className="title-details">Storage:</span>
                   <br />
-                  {detailsData.minimum_system_requirements.storage}
+                  {requeriments ? requeriments.storage : "N/A"}
                 </p>
                 <p>
                   <span className="title-details">Graphics:</span>
                   <br />
-                  {detailsData.minimum_system_requirements.graphics}
+                  {requeriments ? requeriments.graphics : "N/A"}
                 </p>
               </div>
             </div>

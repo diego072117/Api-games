@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
 .container-details {
   display: flex;
   justify-content: center;
@@ -9,7 +7,7 @@
   background-size: cover;
   transition: background-image 0.5s ease-in-out;
 
-  .container-exit{
+  .container-exit {
     display: flex;
     justify-content: space-between;
     height: 2em;
@@ -18,12 +16,11 @@
   }
 
   & .icon-exit,
-    .icon-download{
+  .icon-download {
     font-size: 30px;
     color: #fd814a;
     text-decoration: none;
   }
-
 
   & .content-details {
     background-color: #fff;
@@ -53,7 +50,7 @@
   }
 
   & .open {
-    height: 36em;
+    height: 40em;
   }
 
   & .container-content {
@@ -61,6 +58,9 @@
     top: 1.5em;
 
     & .title-game {
+      display: flex;
+      
+      justify-content: center;
       color: #999999;
 
       & .fa-gamepad {
@@ -69,8 +69,6 @@
     }
 
     & .content-two {
-      position: absolute;
-      right: -4em;
       width: 15em;
 
       & ::after {
@@ -82,23 +80,17 @@
         height: 1px;
         background-color: #e2e2e2;
       }
-
     }
 
     & .requirements {
       position: absolute;
-      top: 13em;
+      width: 15em;
 
       & .fa-screwdriver-wrench {
         color: #fc5c4c;
       }
 
       & .content-requirements {
-        position: absolute;
-        top: 2em;
-        right: -5.5em;
-        width: 15em;
-
         & :after {
           content: "";
           position: absolute;
@@ -112,8 +104,6 @@
     }
     & .content-three {
       position: absolute;
-      right: -4.4em;
-      width: 15em;
       top: 28em;
       color: #999999;
     }
@@ -122,6 +112,4 @@
 
 .title-details {
   color: #999999;
-  font-size: 15px;
-  font-family: 'Roboto', sans-serif;
 }
