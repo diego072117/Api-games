@@ -40,12 +40,24 @@ export const DetailsGame = ({ detailsData }) => {
 
   const backgroundStyle = rotateBackgroundImage(detailsData.screenshots);
 
+  console.log(detailsData);
+
   return (
     <>
-      <div
-        className="container-details"
-        style={backgroundStyle}
-      >
+      <div className="container-details" style={backgroundStyle}>
+        <div className="container-exit">
+          <NavLink to="/" className="icon-exit" target="_blank">
+            <i class="fa-solid fa-chevron-left"></i>
+          </NavLink>
+          <NavLink
+            to={detailsData.game_url}
+            className="icon-download"
+            target="_blank"
+          >
+            <i class="fa-solid fa-download"></i>
+          </NavLink>
+        </div>
+
         <nav className={contentClassName}>
           <div className="button" onClick={handleClick}>
             Overview
@@ -73,6 +85,34 @@ export const DetailsGame = ({ detailsData }) => {
                 <span className="title-details">Developer:</span>{" "}
                 {detailsData.developer}
               </p>
+            </div>
+            <div className="requirements">
+              <p>
+                <i class="fa-solid fa-screwdriver-wrench"></i> requirements
+              </p>
+              <div className="content-requirements">
+                <p>
+                  <span className="title-details">Memory:</span>{" "}
+                  {detailsData.minimum_system_requirements.memory}
+                </p>
+                <p>
+                  <span className="title-details">Os:</span>{" "}
+                  {detailsData.minimum_system_requirements.os}
+                </p>
+                <p>
+                  <span className="title-details">Storage:</span>
+                  <br />
+                  {detailsData.minimum_system_requirements.storage}
+                </p>
+                <p>
+                  <span className="title-details">Graphics:</span>
+                  <br />
+                  {detailsData.minimum_system_requirements.graphics}
+                </p>
+              </div>
+            </div>
+            <div className="content-three">
+              <p>{detailsData.short_description}</p>
             </div>
           </div>
         </nav>
