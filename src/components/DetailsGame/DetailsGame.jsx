@@ -46,7 +46,7 @@ export const DetailsGame = ({ detailsData }) => {
     <>
       <div className="container-details" style={backgroundStyle}>
         <div className="container-exit">
-          <NavLink to="/" className="icon-exit" target="_blank">
+          <NavLink to="/" className="icon-exit">
             <i class="fa-solid fa-chevron-left"></i>
           </NavLink>
           <NavLink
