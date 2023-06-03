@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import { getAllGames } from "../../data/Api";
 import { Card } from "../../components/GameCard/Card";
 import { Nav } from "../../components/Nav/Nav";
-import './HomeStyle.scss'
+import { CustomLoading } from "../../Loading/CustomLoading"
+import ReactPaginate from "react-paginate";
+import "./HomeStyle.scss";
+
 
 export const Home = () => {
   const [data, setData] = useState([]);
@@ -25,9 +27,16 @@ export const Home = () => {
     dataFromAPI();
   }, []);
 
+  if (!data) return <CustomLoading />;
+
   return (
     <>
-      <Card data={data.slice(currentPage * itemsPerPage, (currentPage +1 ) * itemsPerPage)} />
+      <Card
+        data={data.slice(
+          currentPage * itemsPerPage,
+          (currentPage + 1) * itemsPerPage
+        )}
+      />
       <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}

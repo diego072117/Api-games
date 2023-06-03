@@ -1,9 +1,8 @@
-.container-nav{
-    display: flex;
-    justify-content: center;
-}
+.container-nav {
+  display: flex;
+  justify-content: center;
 
-.nav{
+  & .nav {
     background-color: #fff;
     display: flex;
     justify-content: space-around;
@@ -13,14 +12,15 @@
     width: 100%;
     border-radius: 40px;
     //box-shadow: 0 0 10px rgb(0, 0, 0);
-}
 
-.icon{
-    font-size: 30px;
-    margin: 1em 0;
-    color: #989A9D;
-}
+    & .icon {
+      font-size: 30px;
+      margin: 1em 0;
+      color: #989a9d;
 
-.icon:hover{
-    color: #FD814A;
+      & :hover {
+        color: #fd814a;
+      }
+    }
+  }
 }

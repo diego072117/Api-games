@@ -1,42 +1,115 @@
 .container-details {
   display: flex;
   justify-content: center;
-}
-
-.content-details {
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  max-width: 20em;
   width: 100%;
-  border-radius: 40px 40px 0 0;
-  transition: height 0.5s ease;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  transition: background-image 0.5s ease-in-out;
+
+  .container-exit {
+    display: flex;
+    justify-content: space-between;
+    height: 2em;
+    width: 100%;
+    margin: 20px;
+  }
+
+  & .icon-exit,
+  .icon-download {
+    font-size: 30px;
+    color: #fd814a;
+    text-decoration: none;
+  }
+
+  & .content-details {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    max-width: 20em;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
+    transition: height 0.5s ease;
+    height: 5em;
+
+    & .button {
+      background-color: #fd814a;
+      color: #fff;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 10px 15px;
+      border-radius: 10px;
+      height: 1.2em;
+      width: 7em;
+      cursor: pointer;
+      margin: -18px;
+      background-image: linear-gradient(to right, #fc5c4c, #fd814a);
+    }
+  }
+
+  & .open {
+    height: 40em;
+  }
+
+  & .container-content {
+    position: absolute;
+    top: 1.5em;
+
+    & .title-game {
+      display: flex;
+      
+      justify-content: center;
+      color: #999999;
+
+      & .fa-gamepad {
+        color: #fc5c4c;
+      }
+    }
+
+    & .content-two {
+      width: 15em;
+
+      & ::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e2e2e2;
+      }
+    }
+
+    & .requirements {
+      position: absolute;
+      width: 15em;
+
+      & .fa-screwdriver-wrench {
+        color: #fc5c4c;
+      }
+
+      & .content-requirements {
+        & :after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #e2e2e2;
+        }
+      }
+    }
+    & .content-three {
+      position: absolute;
+      top: 28em;
+      color: #999999;
+    }
+  }
 }
 
-.open {
-  height: 36em;
-}
-
-.close {
-  height: 5em;
-}
-
-.button {
-  background-color: #fd814a;
-  color: #fff;
-  font-size: 1.2em;
-  text-align: center;
-  padding: 10px 15px;
-  border-radius: 10px;
-  height: 1.2em;
-  width: 7em;
-  cursor: pointer;
-  margin: -18px;
-  background-image: linear-gradient(to right, #fc5c4c, #fd814a);
-}
-
-.icon:hover {
-  color: #fd814a;
+.title-details {
+  color: #999999;
 }

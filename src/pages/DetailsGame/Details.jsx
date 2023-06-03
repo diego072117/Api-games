@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getGameById } from "../../data/Api";
 import { DetailsGame } from "../../components/DetailsGame/DetailsGame";
+import { CustomLoading } from "../../Loading/CustomLoading"
 import "./DetailsStyle.scss";
-import { PacmanLoader } from "react-spinners";
 
 export const Details = () => {
   const { id } = useParams();
@@ -18,15 +18,7 @@ export const Details = () => {
     gameDetails();
   }, [id]);
 
-  if (!gameDetails) {
-    return (
-      <div className="loader-container">
-        <PacmanLoader color="#fd814a" />
-      </div>
-    );
-  }
-
-  console.log(gameDetails);
+  if (!gameDetails) return <CustomLoading />;
 
   return (
     <>
