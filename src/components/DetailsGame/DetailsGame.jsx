@@ -38,7 +38,6 @@ export const DetailsGame = ({ detailsData }) => {
   };
 
   const backgroundStyle = rotateBackgroundImage(detailsData.screenshots);
-  const requeriments = detailsData.minimum_system_requirements;
 
   return (
     <>
@@ -92,21 +91,29 @@ export const DetailsGame = ({ detailsData }) => {
               <div className="content-requirements">
                 <p>
                   <span className="title-details">Memory:</span>{" "}
-                  {requeriments ? requeriments.memory : "N/A"}
+                  {detailsData.minimum_system_requirements.memory
+                    ? detailsData.minimum_system_requirements.memory
+                    : "No disponible"}
                 </p>
                 <p>
                   <span className="title-details">Os:</span>{" "}
-                  {requeriments ? requeriments.os : "N/A"}
+                  {detailsData.minimum_system_requirements.os
+                    ? detailsData.minimum_system_requirements.os
+                    : "No disponible"}
                 </p>
                 <p>
                   <span className="title-details">Storage:</span>
                   <br />
-                  {requeriments ? requeriments.storage : "N/A"}
+                  {detailsData.minimum_system_requirements.storage
+                    ? detailsData.minimum_system_requirements.storage
+                    : "No disponible"}
                 </p>
                 <p>
                   <span className="title-details">Graphics:</span>
                   <br />
-                  {requeriments ? requeriments.graphics : "N/A"}
+                  {detailsData.minimum_system_requirements.graphics
+                    ? detailsData.minimum_system_requirements.graphics
+                    : "No disponible"}
                 </p>
               </div>
             </div>
